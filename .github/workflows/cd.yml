@@ -18,7 +18,8 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: ${{ secrets.SSH_PORT }}
         script: |
-          source ~/.profile
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh
           cd ~/auth-api
           git pull origin master
           npm install
